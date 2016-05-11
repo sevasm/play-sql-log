@@ -1,0 +1,26 @@
+@(users: List[User], form: Form[User], useJdbc: Boolean)
+@main("Users") {
+    <a href="@routes.UserController.index">Back to mode selection</a>
+    <p>Users</p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Username</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(user <- users) {
+                <tr>
+                    <td>@user.getId</td>
+                    <td>@user.getUsername</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>Add user</p>
+    @helper.form(action = routes.UserController.addUser(useJdbc)) {
+        <input type="text" name="@form("username").name">
+        <input type="submit">
+    }
+}

@@ -1,0 +1,15 @@
+Play application to illustrate lack of SQL query logging when using JNDI / JPA in Play 2.5.3
+=================================
+
+No additional configuration needed to run
+
+Access application by navigating to http://localhost:9000 after application is started
+
+Select whether JDBC or JPA should be used to execute queries
+
+Next page will show a list of users in the in-memory H2 database
+
+Add users by entering a username and clicking Submit
+
+Note that SQL being executed is only logged to console and logs/application.log when using JDBC and not when using JPA
+

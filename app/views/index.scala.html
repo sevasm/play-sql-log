@@ -1,0 +1,6 @@
+@()
+@main("Index") {
+    <p>Select mode</p>
+    <a href="@routes.UserController.getUsers(true)">Use JDBC</a>
+    <a href="@routes.UserController.getUsers(false)">Use JPA</a>
+}
